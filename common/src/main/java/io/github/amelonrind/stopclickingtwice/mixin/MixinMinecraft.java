@@ -37,7 +37,7 @@ public class MixinMinecraft {
     @WrapOperation(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;startUseItem()V", ordinal = 1))
     private void onRepeatedUse(Minecraft instance, Operation<Void> original) {
         if (stopclickingtwice$isCatchingUp && stopclickingtwice$usedItem) {
-            System.out.println("Blocked a repeated use during lagspike.");
+//            System.out.println("Blocked a repeated use during lagspike.");
             return;
         }
         original.call(instance);
@@ -53,7 +53,7 @@ public class MixinMinecraft {
         if (!stopclickingtwice$isCatchingUp) {
             stopclickingtwice$breakingPos = pos;
         } else if (!pos.equals(stopclickingtwice$breakingPos)) {
-            System.out.println("Blocked a block breaking during lagspike.");
+//            System.out.println("Blocked a block breaking during lagspike.");
             ci.cancel();
         }
     }
