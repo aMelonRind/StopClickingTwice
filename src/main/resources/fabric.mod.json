@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "stopclickingtwice",
+  "version": "${version}",
+  "name": "StopClickingTwice",
+  "description": "Prevents minecraft from clicking multiple times during lagspike.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/stopclickingtwice/icon.png",
+  "environment": "client",
+  "entrypoints": {
+  },
+  "mixins": [
+    "stopclickingtwice.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=26.1"
+  }
+}
